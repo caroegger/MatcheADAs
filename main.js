@@ -48,7 +48,7 @@ const ocultarBotones = () => {
 };
 
 botonFacil.onclick = () => {
-  crearGrilla(6, 6);
+  crearGrilla(10, 10);
   ocultarBotones();
   reiniciarJuego.classList.add("facil");
 };
@@ -60,7 +60,7 @@ botonMedio.onclick = () => {
 };
 
 botonDificil.onclick = () => {
-  crearGrilla(10, 10);
+  crearGrilla(6, 6);
   ocultarBotones();
   reiniciarJuego.classList.add("dificil");
 };
@@ -76,11 +76,11 @@ nuevoJuego.onclick = () => {
 
 reiniciarJuego.onclick = () => {
   if (reiniciarJuego.classList.contains("facil")) {
-    crearGrilla(6, 6);
+    crearGrilla(10, 10);
   } else if (reiniciarJuego.classList.contains("medio")) {
     crearGrilla(8, 8);
   } else if (reiniciarJuego.classList.contains("dificil")) {
-    crearGrilla(10, 10);
+    crearGrilla(6, 6);
   }
 };
 
@@ -125,26 +125,26 @@ buscarMatches.onclick = () => {
       }
     }
   }
-  // for (let j = 0; j < listaDeFrutas.length; j++) {
-  //   for (let i = 0; i < listaDeFrutas[j].length; i++) {
-  //     if (
-  //       listaDeFrutas[j][i] === listaDeFrutas[j][i] &&
-  //       listaDeFrutas[j][i] === listaDeFrutas[j + 2][i]
-  //     ) {
-  //       console.log(listaDeFrutas[j + 2][i]);
-  //       const divVertical = document.querySelector(
-  //         `div[data-x="${i}"][data-y="${j}"]`
-  //       );
-  //       divVertical.style.backgroundColor = "red";
-  //       const divVerticalDos = document.querySelector(
-  //         `div[data-x="${i}"][data-y="${j + 1}"]`
-  //       );
-  //       divVerticalDos.style.backgroundColor = "red";
-  //       const divVerticalTres = document.querySelector(
-  //         `div[data-x="${i}"][data-y="${j + 2}"]`
-  //       );
-  //       divVerticalTres.style.backgroundColor = "red";
-  //     }
-  //   }
-  // }
+  for (let j = 0; j < listaDeFrutas.length; j++) {
+    for (let i = 0; i < listaDeFrutas[j].length; i++) {
+      if (
+        listaDeFrutas[j][i] === listaDeFrutas[j][i] &&
+        listaDeFrutas[j][i] === listaDeFrutas[j + 2][i]
+      ) {
+        console.log(listaDeFrutas[j + 2][i]);
+        const divVertical = document.querySelector(
+          `div[data-x="${i}"][data-y="${j}"]`
+        );
+        divVertical.style.backgroundColor = "red";
+        const divVerticalDos = document.querySelector(
+          `div[data-x="${i}"][data-y="${j + 1}"]`
+        );
+        divVerticalDos.style.backgroundColor = "red";
+        const divVerticalTres = document.querySelector(
+          `div[data-x="${i}"][data-y="${j + 2}"]`
+        );
+        divVerticalTres.style.backgroundColor = "red";
+      }
+    }
+  }
 };
